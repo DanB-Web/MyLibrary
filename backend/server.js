@@ -10,7 +10,7 @@ import authorRoutes from './routes/authorRoutes.js';
 
 import { notFound, errorHandler } from './middleware/error.js';
 
-import { connectDB } from './config/database.js'
+import connectDB from './config/database.js'
 
 dotenv.config();
 

@@ -7,6 +7,10 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  email: {
+    type: String,
+    required: true
+  },
   password: {
     type: String,
     required: true
@@ -15,7 +19,11 @@ const userSchema = mongoose.Schema({
     type: Boolean,
     required: true,
     default: false
-  }
+  },
+  favorites: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Book'
+  }]
 }, {
   timestamps: true
   }
@@ -23,7 +31,7 @@ const userSchema = mongoose.Schema({
 
 //METHOD ON USER MODEL TO CHECK PASSWORD VIA BCRYPT
 userSchema.methods.matchPassword = async function (enteredPassword) {
-  return await bcrypt.compare(enteredPassword, this.password)
+  return await bcrypt.compare(enteredPassword, this.password);
 }
 
 //MONGOOSE MIDDLEWARE TO HASH PW BEFORE SAVING INTO DB
