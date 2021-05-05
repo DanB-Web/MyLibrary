@@ -4,8 +4,10 @@ const connectDB = async () => {
 
   const databaseString = process.env.MONGO_URI;
 
+  console.log('Database string db.js:', databaseString);
+
   try {
-    const conn = await mongoose.connect(`${databaseString}/MyLibrary`, {
+    const conn = await mongoose.connect(databaseString, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
       useCreateIndex: true
@@ -17,4 +19,4 @@ const connectDB = async () => {
   }
 }
 
-export { connectDB };
+export default connectDB;

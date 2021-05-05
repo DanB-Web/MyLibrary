@@ -5,7 +5,8 @@
   "description": "A simple MERN CRUD Application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "data:import": "node backend/config/seeder.js",
+    "data:destroy": "node backend/config/seeder.js -d"
   },
   "repository": {
     "type": "git",
