@@ -1,6 +1,10 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
+
+import session from 'express-session';
+import { default as connectMongoDBSession } from 'connect-mongodb-session';
+
 import morgan from 'morgan';
 import colors from 'colors';
 
@@ -19,8 +23,33 @@ const PORT = process.env.PORT || 3000;
 
 const isProduction = process.env.NODE_ENV === 'production';
 
+//INITIALISE SESSION STORE
+const MongoDBStore = connectMongoDBSession(session);
+const store = new MongoDBStore({
+  uri: process.env.MONGO_URI,
+  collection: 'sessions'
+});
+
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  methods: ['POST', 'PUT', 'GET', 'OPTIONS', 'HEAD'],
+  credentials: true
+};
+
 //STANDARD EXPRESS CONFIG MIDDLEWARE
-app.use(cors(), express.json());
+app.use(
+  cors(corsOptions), 
+  express.json()
+);
+
+//SESSION CONFIG
+app.use(session(
+  {secret: 'mySecret', 
+   resave: false, 
+   saveUninitialized: false,
+   store: store,
+   cookie: {httpOnly: false}
+  }))
 
 //MORGAN REQ LOGGER
 isProduction ? 
@@ -32,10 +61,8 @@ app.use('/user', userRoutes);
 app.use('/book', bookRoutes);
 app.use('/author', authorRoutes);
 
-//404
+//404 + ERROR HANDLING
 app.use(notFound);
-
-//ERROR HANDLING
 app.use(errorHandler);
 
 //IIFE TO AWAIT DB CONNECTION
