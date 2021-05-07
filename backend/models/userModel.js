@@ -15,6 +15,10 @@ const userSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  mode: {
+    type: String,
+    default: 'light'
+  },
   isAdmin: {
     type: Boolean,
     required: true,

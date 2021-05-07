@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Login from './screens/Login';
+import Library from './screens/Library';
+
 import './App.css';
 
-function App() {
+const App = () => {
+
+  const [auth, setAuth] = useState(false);
+
+
+  if (!auth) {
+    return (
+      <div className="App">
+        <Login setAuth={setAuth}></Login>
+      </div>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <div className="App">
+        <Library></Library>
+      </div>
+  )
+  
 }
 
 export default App;

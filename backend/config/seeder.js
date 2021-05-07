@@ -38,11 +38,9 @@ const importData = async () => {
     await Author.deleteMany();
 
     //ADD ALL USERS - HAD TO USE 'create' METHOD TO TRIGGER MONGOOSE 'pre' MW
-    (async function populateUsers () {
-      for (let i = 0; i < users.length; i++) {
-        await User.create(users[i]);
-      }
-    })();
+    await User.create(users[0]);
+    await User.create(users[1]);
+    await User.create(users[2]);
     
 
     //ADD ALL AUTHORS
