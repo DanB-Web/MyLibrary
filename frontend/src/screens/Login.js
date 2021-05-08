@@ -1,18 +1,30 @@
 import React, { useState } from 'react';
-import { login } from '../utils/rest.js'
 
-const Login = ({ setAuth }) => {
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../store/actions/userActions';
+
+import { PuffLoader } from 'react-spinners';
+
+const Login = () => {
+
+  const dispatch = useDispatch();
+  const userDetails = useSelector(state => state.userDetails);
+  const { loading, error } = userDetails;
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const loginHandler = async (e) => {
+  const loginHandler = (e) => {
     e.preventDefault();
-    const reply = await login(email, password);
-    console.log(reply);
-    if (reply.data.userAuth) {
-      setAuth(true)
-    }
+    dispatch(login(email, password));
+  }
+
+  if (loading) {
+    return <PuffLoader size={40} color={'#F5A623'}/>
+  }
+
+  if (error) {
+    return <div>Something went wrong...</div>
   }
 
   return (

@@ -21,12 +21,19 @@ export const login = async (req, res) => {
         userAuth: true
       });
     } else {
-      res.status(401);
-      res.json({error: "Invalid email or password"});
+      res.status(401).json({error: "Invalid email or password"});
     }
   } catch (err) {
-    res.status(500);
-    res.json({error: "Server error"})
+    res.status(500).json({error: "Server error"})
+  }
+}
+
+export const logout = async (req, res) => {
+  try {
+    await req.session.destroy();
+    res.status(200).json({message: "Logged out"})
+  } catch (err) {
+    res.status(500).json({error: "Server error"})
   }
 }
 
