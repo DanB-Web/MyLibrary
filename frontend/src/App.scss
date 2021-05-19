@@ -5,6 +5,12 @@
 
 @import './styles/screens/login.scss';
 
+@import './styles/components/navbar.scss';
+@import './styles/components/backdrop.scss';
+@import './styles/components/drawer.scss';
+
+@import './styles/animations/animations.scss';
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;900&display=swap');
 
 body {

@@ -79,6 +79,9 @@
 }
 
 @media screen and (max-width: 900px) {
+  .navbar-container .navbar-title h1 {
+    font-size: 2rem;
+  }
   .navbar-container .fa-sign-out-alt,
   .navbar-container a {
     display: none;
