@@ -10,7 +10,8 @@ import ReadingList from './screens/ReadingList';
 import Profile from './screens/Profile';
 import Admin from './screens/Admin';
 
-import './App.css';
+import 'normalize.css';
+import './App.scss';
 
 const App = () => {
 
@@ -20,7 +21,6 @@ const App = () => {
   if (!userAuth) {
     return (
       <div className="Login-Page">
-        <Navbar userAuth={userAuth}></Navbar>
         <Login></Login>
       </div>
     );

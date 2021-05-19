@@ -1,0 +1,11 @@
+body {
+  background: var(--color-background);
+}
+
+.neumorph {
+  background: var(--color-background);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 6px 6px 14px 0 rgba(0, 0, 0, 0.2),
+    -8px -8px 18px 0 rgba(255, 255, 255, 0.55);
+}

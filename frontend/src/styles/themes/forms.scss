@@ -1,0 +1,18 @@
+.form-theme {
+  padding: 2rem;
+  label {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+  input {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 2px solid transparent;
+  }
+  input:focus {
+    outline: none;
+    border: 2px solid var(--color-primary);
+  }
+}

@@ -1,0 +1,18 @@
+@import './styles/themes/forms.scss';
+@import './styles/themes/buttons.scss';
+@import './styles/themes/variables.scss';
+@import './styles/themes/neumorph.scss';
+
+@import './styles/screens/login.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;900&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+

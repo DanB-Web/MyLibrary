@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAC;EACH,UAAU,EAAE,uBAAuB;CACpC;;AAED,AAAA,SAAS,CAAC;EACR,UAAU,EAAE,uBAAuB;EACnC,MAAM,EAAE,GAAG,CAAC,KAAK,CAAC,wBAAwB;EAC1C,aAAa,EAAE,IAAI;EACnB,UAAU,EAAE,GAAG,CAAC,GAAG,CAAC,IAAI,CAAC,CAAC,CAAC,kBAAkB,EAC1C,IAAG,CAAE,IAAG,CAAC,IAAI,CAAC,CAAC,CAAC,yBAAyB;CAC7C",
+    "sources": [
+        "neumorph.scss"
+    ],
+    "names": [],
+    "file": "neumorph.css"
+}

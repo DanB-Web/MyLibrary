@@ -1,0 +1,14 @@
+.btn{
+  padding: 1rem;
+  background-color: var(--color-primary);
+  color: var(--light-shadow);
+  font-size: 1.2rem;;
+  border: 2px solid transparent;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background-color: var(--light-shadow);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
