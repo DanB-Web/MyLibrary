@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logout } from '../store/actions/userActions.js';
 
-import '../styles/components/navbar.scss';
-
-const Navbar = () => {
+const Navbar = ({ toggleDrawer }) => {
 
   const dispatch = useDispatch();
 
@@ -15,7 +13,7 @@ const Navbar = () => {
   }
 
   const drawerHandler = () => {
-    console.log('drawer');
+    toggleDrawer();
   }
 
   return (
