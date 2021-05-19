@@ -24,23 +24,25 @@ const Login = () => {
   }
 
   if (error) {
-    return <div>Something went wrong...</div>
+    return <div>Something went wrong...{error}</div>
   }
 
   return (
-    <div>
-      <form onSubmit={loginHandler}>
-        <label>Email</label>
+    <div className="login-container">
+      <form className="login-form form-theme neumorph" onSubmit={loginHandler}>
+        <i className="fas fa-book fa-3x neumorph"></i>
+        <h2>MyLibrary</h2>
+        <label>Email:</label>
         <input 
           type="email" 
           value={email} 
           onChange={e => setEmail(e.target.value)}></input>
-        <label>Password</label>
+        <label>Password:</label>
         <input 
           type="password" 
           value={password}
           onChange={e => setPassword(e.target.value)}></input>
-        <button type="submit">LOGIN</button>
+        <button className="btn" type="submit">LOGIN</button>
       </form>
     </div>
   )

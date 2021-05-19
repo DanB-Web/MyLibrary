@@ -1,0 +1,16 @@
+html {
+  --color-primary: #1DA1F2;
+  --color-secondary: #adb5bd;
+  --color-background: #e6e6e6;
+  --color-font: #28394a;
+  --light-shadow: #ffffff;
+  --dark-shadow: #d1cdc7;
+}
+
+html[data-theme="dark"] {
+  --color-primary: blue;
+  --color-secondary: #adb5bd;
+  --color-background: #fbfbfb;
+  --color-font: #28394a;
+}
+/*# sourceMappingURL=variables.css.map */

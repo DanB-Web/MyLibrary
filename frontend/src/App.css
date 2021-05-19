@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;900&display=swap");
+.form-theme {
+  padding: 2rem;
+}
+
+.form-theme label {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.form-theme input {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+.form-theme input:focus {
+  outline: none;
+  border: 2px solid var(--color-primary);
+}
+
+.btn {
+  padding: 1rem;
+  background-color: var(--color-primary);
+  color: var(--light-shadow);
+  font-size: 1.2rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background-color: var(--light-shadow);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+html {
+  --color-primary: #1DA1F2;
+  --color-secondary: #adb5bd;
+  --color-background: #e6e6e6;
+  --color-font: #28394a;
+  --light-shadow: #ffffff;
+  --dark-shadow: #d1cdc7;
+}
+
+html[data-theme="dark"] {
+  --color-primary: blue;
+  --color-secondary: #adb5bd;
+  --color-background: #fbfbfb;
+  --color-font: #28394a;
+}
+
+body {
+  background: var(--color-background);
+}
+
+.neumorph {
+  background: var(--color-background);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  -webkit-box-shadow: 6px 6px 14px 0 rgba(0, 0, 0, 0.2), -8px -8px 18px 0 rgba(255, 255, 255, 0.55);
+          box-shadow: 6px 6px 14px 0 rgba(0, 0, 0, 0.2), -8px -8px 18px 0 rgba(255, 255, 255, 0.55);
+}
+
+.login-container {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-container .login-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login-container .login-form i, .login-container .login-form h2 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: var(--color-primary);
+}
+
+.login-container .login-form i {
+  padding: 2rem;
+  border-radius: 50%;
+}
+
+.login-container .login-form h2 {
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.login-container .login-form input {
+  margin-bottom: 1rem;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+/*# sourceMappingURL=App.css.map */
