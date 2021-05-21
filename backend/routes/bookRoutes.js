@@ -1,6 +1,11 @@
 import express from 'express';
 const router = express.Router();
 
-router.get('/test', (req, res) => res.send('bookRoutes get'));
+import { sessionCheck } from '../middleware/auth.js';
+
+import { getBooks } from '../controllers/bookControllers.js';
+
+//ADD SESSION CHECKS AFTER TESTING CONTROLLERS
+router.get('/getbooks', getBooks);
 
 export default router;

@@ -46,13 +46,13 @@ const importData = async () => {
     //ADD ALL AUTHORS
     const createdAuthors = await Author.insertMany(authors);
 
-    //ADD AUTHOR TO BOOK OBJECTS (RELATIONSHIPS)
+    //ADD AUTHOR ID TO BOOK OBJECTS (RELATIONSHIPS)
     books[0].author = createdAuthors[0]._id;
     books[1].author = createdAuthors[0]._id;
     books[2].author = createdAuthors[0]._id;
     books[3].author = createdAuthors[1]._id;
     books[4].author = createdAuthors[1]._id;
-    books[5].author = createdAuthors[2]._id;
+    books[5].author = createdAuthors[2]._id;;
     books[6].author = createdAuthors[2]._id;
     books[7].author = createdAuthors[2]._id;
 
