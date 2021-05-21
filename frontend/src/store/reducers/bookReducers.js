@@ -9,7 +9,7 @@ export const getBooksReducer = (state = {}, action) => {
     case GET_BOOKS_REQUEST:
       return { ...state, loading: true }
     case GET_BOOKS_SUCCESS:
-      return { ...state, loading: false, books: action.payload }
+      return { ...state, loading: false, books: action.payload.books, next: action.payload.next, totalBooks: action.payload.totalBooks }
     case GET_BOOKS_FAILURE:
       return { ...state, loading: false, error: action.payload }
     default:

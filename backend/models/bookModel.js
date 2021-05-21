@@ -10,6 +10,10 @@ const bookSchema = mongoose.Schema({
     required: true,
     ref: 'Author'
   },
+  authorName: {
+    type: String,
+    required: true
+  },
   image: {
     type: String,
     required: true
