@@ -1,1 +1,65 @@
-/* No CSS *//*# sourceMappingURL=book.css.map */
+.book-container {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 1rem;
+  padding: 0.6rem;
+}
+
+.book-container .book-container-details {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.book-container .book-container-details img {
+  width: 9rem;
+  height: 14rem;
+  margin-right: 1rem;
+  border-radius: 5px;
+}
+
+.book-container .book-container-details div {
+  width: 100%;
+}
+
+.book-container .book-container-details div .book-container-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.book-container .book-container-details div .book-container-title h3 {
+  font-size: 2rem;
+  width: 60%;
+  margin: 0;
+}
+
+.book-container .book-container-details div .book-container-info span {
+  font-weight: bold;
+}
+
+.book-container .book-container-synopsis {
+  line-height: 1.6;
+}
+
+.book-container button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+/*# sourceMappingURL=book.css.map */
