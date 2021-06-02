@@ -4,11 +4,14 @@
 @import './styles/themes/neumorph.scss';
 
 @import './styles/screens/login.scss';
+@import './styles/screens/library.scss';
 
 @import './styles/components/navbar.scss';
 @import './styles/components/backdrop.scss';
 @import './styles/components/drawer.scss';
 @import './styles/components/book.scss';
+@import './styles/components/rating.scss';
+@import './styles/components/loaders.scss';
 
 @import './styles/animations/animations.scss';
 
@@ -16,6 +19,13 @@
 
 body {
   font-family: 'Raleway', sans-serif;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll; 
+}
+
+body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
 a, a:visited {

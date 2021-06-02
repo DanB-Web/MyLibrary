@@ -30,8 +30,12 @@ const bookSchema = mongoose.Schema({
     type: Number,
     required: true
   },
-  languages: {
-    type: [String],
+  rating: {
+    type: Number,
+    required: true
+  },
+  ratingsNumber: {
+    type: Number,
     required: true
   },
   ISBN: {

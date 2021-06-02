@@ -1,3 +1,42 @@
 .book-container {
-  
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  padding: 0.6rem;
+  .book-container-details {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    img {
+      width: 9rem;
+      height: 14rem;
+      margin-right: 1rem;
+      border-radius: 5px;
+    }
+    div {
+      width: 100%;
+      .book-container-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h3 {
+          font-size: 2rem;
+          width: 60%;
+          margin: 0;
+        }
+      }
+      .book-container-info {
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+  } 
+  .book-container-synopsis {
+    line-height: 1.6;
+  }
+  button {
+    align-self: flex-end;
+  }
 }

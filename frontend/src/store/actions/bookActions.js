@@ -18,7 +18,7 @@ export const getBooks = (page) => async (dispatch) => {
   try {
     dispatch({ type: GET_BOOKS_REQUEST})
 
-    const limit = 5;
+    const limit = 3;
     const { data } = await axios.get(`${BACKEND_URL}/book/getbooks/?page=${page}&limit=${limit}`, config);
 
     dispatch({ type: GET_BOOKS_SUCCESS, payload: data.results})
