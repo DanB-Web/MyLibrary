@@ -20,7 +20,7 @@ const App = () => {
   const userDetails = useSelector(state => state.userDetails);
   const { userAuth } = userDetails;
 
-  const [mode, setMode] = useState('light');
+ //const [mode, setMode] = useState('light');
   const [drawer, setDrawer] = useState(false);
 
   const toggleDrawer = () => {

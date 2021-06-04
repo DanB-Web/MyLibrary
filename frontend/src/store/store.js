@@ -15,7 +15,7 @@ const reducer = combineReducers({
 
 const userInfoFromStorage = decryptLocalStorage('userKey') 
   ? decryptLocalStorage('userKey') 
-  : {};
+  : {userAuth: false};
 
 const initialState = {
   userDetails: userInfoFromStorage,

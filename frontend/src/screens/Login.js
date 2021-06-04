@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
+import { CLEAR_USER } from '../store/constants'
 import { login } from '../store/actions/userActions';
 
 import { PuffLoader } from 'react-spinners';
@@ -19,12 +20,21 @@ const Login = () => {
     dispatch(login(email, password));
   }
 
-  if (loading) {
-    return <PuffLoader size={40} color={'#F5A623'}/>
+  const loginRedirect = () => {
+    setEmail('');
+    setPassword('');
+    dispatch({type: CLEAR_USER})
   }
 
   if (error) {
-    return <div>Something went wrong...{error}</div>
+    return <div className="login-error-container">
+            <p>{error.data.error}</p>
+            <button onClick={loginRedirect} className="btn">BACK</button>
+           </div>
+  }
+
+  if (loading) {
+    return <PuffLoader size={40} color={'#F5A623'}/>
   }
 
   return (

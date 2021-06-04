@@ -10,22 +10,26 @@ import Book from '../components/Book';
 const Library = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
-  const [totalPagesArray, setTotalPagesArray] = useState([]);
-  const { loading, error, books, totalBooks} = useSelector(state => state.books)
+  const [totalPages, setTotalPages] = useState(1);
+  const [totalPagesArray, setTotalPagesArray] = useState(['PAGE']);
 
+  const { loading, error, books, totalBooks} = useSelector(state => state.books);
+  
   const dispatch = useDispatch();
+
+  //Fetch books for current page
+  useEffect(() => {
+    dispatch(getBooks(currentPage));   
+  }, [currentPage, dispatch]);
 
   //Calculate total number of pages and create dummy array to render pagination links with .map
   useEffect(() => {
-    async function renderPage () {
-      await dispatch(getBooks(currentPage));
-      await setTotalPages(Math.ceil(totalBooks/3));
+    if (totalBooks > 3) {
+      setTotalPages(Math.ceil(totalBooks/3));
       const array = new Array(totalPages).fill('PAGE');
       setTotalPagesArray(array);
-    }
-    renderPage();
-  }, [currentPage, totalBooks, totalPages, dispatch])
+    }  
+  }, [books, totalBooks, totalPages])
 
   const pageHandler = (page) => {
     setCurrentPage(page);
@@ -51,7 +55,7 @@ const Library = () => {
         return <Book key={book._id} book={book}></Book>
       }))}
       <div className="library-container-pagination">
-        {totalPages > 1 ?
+        {books ?
           totalPagesArray.map((_, index) => {
             const page = index + 1;
             if (page === currentPage) {
