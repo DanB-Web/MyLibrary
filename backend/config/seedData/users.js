@@ -4,24 +4,21 @@ const users = [
     email: "user1@email.com",
     mode: 'light',
     password: "123456",
-    favorites: [],
-    myRatings: []
+    readingList: [],
   },
   {
     name: "User 2 Profile",
     email: "user2@email.com",
     mode: 'dark',
     password: "123456",
-    favorites: [],
-    myRatings: []
+    readingList: [],
   },
   {
     name: "Admin Profile",
     email: "admin@email.com",
     mode: 'light',
     password: "123456",
-    favorites: [],
-    myRatings: [],
+    readingList: [],
     isAdmin: true
   }
 ]

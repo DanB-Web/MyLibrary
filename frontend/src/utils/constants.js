@@ -1,0 +1,1 @@
+export const noImage = "https://res.cloudinary.com/dasb94yfb/image/upload/v1622631234/MyLibrary/NoImage_ny4b39.jpg";

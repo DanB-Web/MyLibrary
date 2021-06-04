@@ -1,6 +1,23 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
 
+const readingListSchema = mongoose.Schema({
+  book: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Book'
+    },
+    read: {
+      type: Boolean,
+      required: true,
+      default: false
+    },
+    myRating: {
+      type: Number,
+      required: false,
+      default: null
+    }
+})
+
 //User Schema
 const userSchema = mongoose.Schema({
   name: {
@@ -24,10 +41,7 @@ const userSchema = mongoose.Schema({
     required: true,
     default: false
   },
-  favorites: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Book'
-  }]
+  readingList: [readingListSchema]
 }, {
   timestamps: true
   }

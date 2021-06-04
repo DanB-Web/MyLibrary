@@ -1,15 +1,25 @@
 import React from 'react';
+
+import { useSelector } from 'react-redux';
+
 import Moment from 'moment';
+
+import { addToReadingList } from '../utils/rest.js';
+import { noImage } from '../utils/constants.js';
 
 import Rating from './Rating';
 
-const noImageURL ="https://res.cloudinary.com/dasb94yfb/image/upload/v1622631234/MyLibrary/NoImage_ny4b39.jpg"
-
 const Book = ({book}) => {
 
+  const user = useSelector(state => state.userDetails.userInfo);
+
   if (book.image === "URL") {
-    book.image = noImageURL;
+    book.image = noImage;
   } 
+
+  const addToReadingListhandler = () => {
+    addToReadingList(user._id, book._id);
+  }
 
   return (
     <div className="book-container neumorph">
@@ -30,7 +40,7 @@ const Book = ({book}) => {
         </div>
       </div>
       <p className="book-container-synopsis">{book.synopsis}</p>
-      <button className="btn">Add to reading list</button>
+      <button className="btn" onClick={addToReadingListhandler}>Add to reading list</button>
     </div>
   )
 }

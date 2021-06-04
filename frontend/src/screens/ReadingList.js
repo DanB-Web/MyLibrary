@@ -3,7 +3,13 @@ import React from 'react'
 const ReadingList = () => {
   return (
     <div>
-      Reading List
+      <div>
+       <p>To Read</p>
+      </div>
+      <hr/>
+      <div>
+        <p>Read</p>
+      </div>
     </div>
   )
 }

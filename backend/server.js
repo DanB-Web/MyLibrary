@@ -46,6 +46,7 @@ app.use(
 app.use(session(
   {secret: 'mySecret', 
    resave: false, 
+   //maxAge: 7200000, //2 HOURS
    saveUninitialized: false,
    store: store,
    cookie: {httpOnly: false}
